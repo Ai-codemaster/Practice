@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Img_hover</title>
+
+  <style>
+    .container{
+      display: flex;
+      width: 90%;
+      height: 450px;
+      overflow: hidden;
+      margin: 200px auto;
+      border-radius: 20px;
+    }
+
+    .img_card{
+      position: relative;
+      flex: 1;
+      overflow: hidden;
+      transition: flex 0.5s ease-in-out;
+      cursor: pointer;
+    }
+
+    .img_card img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(70%) contrast(90%);
+      transition: filter 0.5s ease-in-out;
+    }
+
+    .img_card:hover{
+      flex: 3;
+    }
+
+    .img_card img:hover{
+      filter: none;
+    }
+
+    .text_overlay{
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: white;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .img_card:hover .text_overlay{
+      opacity: 1;
+    }
+
+    .text_overlay h3{
+      font-size: 30px;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .text_overlay p{
+      font-size: 16px;
+      font-weight: 400;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="img_card">
+      <img src="/img/bird.jpg" alt="">
+      <div class="text_overlay">
+        <h3>Sky Freedom</h3>
+        <p>Flying beyond the ocean winds</p>
+      </div>
+    </div>
+    <div class="img_card">
+      <img src="/img/boat.jpg" alt="">
+      <div class="text_overlay">
+        <h3>Silent Escape</h3>
+        <p>Calm boat in nature's arms</p>
+      </div>
+    </div>
+    <div class="img_card">
+      <img src="/img/mountain.jpg" alt="">
+      <div class="text_overlay">
+        <h3>Nature's Majesty</h3>
+        <p>Endless peaks, silent power</p>
+      </div>
+    </div>
+    <div class="img_card">
+      <img src="/img/natural-disasters.jpg" alt="">
+      <div class="text_overlay">
+        <h3>Wild Wrath</h3>
+        <p>Nature's fury, raw and real</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
