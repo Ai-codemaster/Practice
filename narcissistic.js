@@ -18,3 +18,4 @@ function digit(a) {
 }
 
 console.log(digit(1532));
+
