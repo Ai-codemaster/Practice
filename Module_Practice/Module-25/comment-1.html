@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comment Box</title>
+
+    <style>
+      h1 {
+        text-align: center;
+        font-size: 60px;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 40px;
+        color: red;
+      }
+
+      .comment {
+        border: 2px solid tomato;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 10px;
+        text-align: center;
+        font-size: 20px;
+      }
+
+      section {
+        border: 2px solid aquamarine;
+        border-radius: 20px;
+      }
+
+      form {
+        margin: 10px;
+      }
+
+      .text-area {
+        border: 2px solid tomato;
+        border-radius: 10px;
+        padding: 10px;
+        resize: none;
+        overflow: hidden;
+        overflow-y: scroll;
+        scrollbar-width: none;
+      }
+
+      .text-area:focus {
+        border: 2px solid tomato;
+        outline: none;
+      }
+
+      .text-area::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Write what is in your mind!!!!</h1>
+    <section>
+      <h2>All Comment here</h2>
+
+      <div id="comment-container">
+        <p class="comment">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+          itaque expedita ad fugit laboriosam ullam natus, ipsum quo esse et
+          accusamus veritatis perspiciatis voluptatem eaque. Odio sequi pariatur
+          aut corporis magni, quis, quidem cumque libero animi, dolorem qui
+          obcaecati iste? Ex ullam provident quod obcaecati officia nobis
+          veritatis. Error adipisci dolor quaerat libero corporis. Iusto aut
+          animi repellat reprehenderit quis!
+        </p>
+        <p class="comment">
+          Maiores reprehenderit soluta facere dolorem facilis incidunt numquam,
+          quos, quae distinctio quasi nulla natus odio ut tenetur nam quo sequi!
+          Ea, porro earum! Quo molestias dignissimos eveniet laborum aperiam
+          numquam. Neque fugiat quaerat repellat, omnis iure cum possimus
+          consequuntur voluptate minima esse ad. Explicabo ut nobis tempore,
+          praesentium consequatur sit porro veniam repudiandae incidunt ducimus?
+          Atque cupiditate ab numquam unde.
+        </p>
+        <p class="comment">
+          Natus, corrupti magnam ea soluta obcaecati esse reiciendis fugiat,
+          voluptates, possimus perspiciatis eligendi magni voluptatem!
+          Accusantium minus incidunt aliquid totam! Ipsam minima incidunt
+          labore, impedit corrupti deleniti? Molestiae ipsum ullam numquam
+          obcaecati alias exercitationem dolorum, accusamus, assumenda pariatur
+          debitis voluptatum quia, unde officiis praesentium iste voluptatibus
+          temporibus mollitia. Voluptatibus ea explicabo dolores? Sit porro
+          similique quidem at cupiditate tenetur culpa.
+        </p>
+      </div>
+    </section>
+
+    <form action="#">
+      <textarea
+        class="text-area"
+        name=""
+        id="Comment-text"
+        cols="70"
+        rows="5"
+      ></textarea>
+      <br />
+      <br />
+      <button id="btn-comment-post">Post Comment</button>
+    </form>
+
+    <script>
+      document
+        .getElementById('btn-comment-post')
+        .addEventListener('click', function () {
+          const commentText = document.getElementById('Comment-text');
+          const comment = commentText.value;
+          const commentContainer = document.getElementById('comment-container');
+          const commentElement = document.createElement('p');
+          commentElement.innerText = comment;
+          commentContainer.appendChild(commentElement);
+          commentElement.classList.add('comment');
+          commentText.value = '';
+        });
+    </script>
+
+    <script src="comment-1.js"></script>
+  </body>
+</html>
