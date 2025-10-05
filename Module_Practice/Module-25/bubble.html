@@ -62,6 +62,14 @@
         .addEventListener('click', function () {
           console.log('section clicked');
         });
+
+      document.querySelector('ol').addEventListener('click', function (event) {
+        console.log(event.target);
+      });
+
+      document.querySelector('ol').addEventListener('click', function (event) {
+        console.log('Target:', event.target);
+      });
     </script>
   </body>
 </html>
